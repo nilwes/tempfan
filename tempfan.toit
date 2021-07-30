@@ -1,8 +1,8 @@
 
 import gpio
-import gpio.pwm
+import gpio.pwm as gpio
 import serial.protocols.i2c as i2c
-import drivers.bme280
+import drivers.bme280 as drivers
 
 import bitmap show *
 import font show *
