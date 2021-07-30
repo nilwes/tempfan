@@ -1,4 +1,9 @@
 
+/*
+Program measuring temperature, relative humidity, and atmospheric pressure
+  with a BME280.
+*/
+
 import gpio
 import gpio.pwm as gpio
 import serial.protocols.i2c as i2c
