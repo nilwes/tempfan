@@ -81,9 +81,11 @@ main:
     bme.off
     print "Temperature: $(%.1f temp) °C"
     oled_text.text = "$(%.1f temp) "
+    
     //Map measured temperature to histogram range
     histo_data = (temp - histo_input_start) / (histo_input_end - histo_input_start) * (histo_output_end - histo_output_start) + histo_output_start
     histo.add histo_data
+    
     //Map measuret temperature to duty factor 0-1
     df = (temp - input_start) / (input_end - input_start) * (output_end - output_start) + output_start
     if df < 0.16: //Lower duty factor than 0.16 does not start motor
@@ -92,6 +94,7 @@ main:
       df = 0.99
     print "Duty Factor: $(df)"
     chan1.set_duty_factor df
+    
     oled.draw
 
     sleep --ms=500
