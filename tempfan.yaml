@@ -1,5 +1,0 @@
-name: "Fan Control"
-entrypoint: tempfan.toit
-triggers:
-  on_install: true
-  on_boot: true
